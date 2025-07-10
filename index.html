@@ -206,6 +206,19 @@
 
     renderSlots();
     renderAllBookings();
+    const toggleBtn = document.getElementById('toggle-mode');
+
+// Load saved theme from localStorage
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+}
+
+toggleBtn.onclick = () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark);
+};
+
   </script>
 </body>
 </html>
